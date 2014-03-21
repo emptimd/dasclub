@@ -1,12 +1,15 @@
 $(function(){
-$('.slider1').bxSlider({
+    /**
+    * bxSlider
+    */
+    $('.slider1').bxSlider({
         minSlides: 3,
-        moveSlides:1,
+        moveSlides:1,  
         maxSlides: 3,
         slideMargin: 11,
         slideWidth:326,
         infiniteLoop:false,
-        pager:false,
+        pager:false, 
         nextText:'',
         prevText:''
     });
@@ -23,5 +26,4 @@ $('.slider1').bxSlider({
         prevText:''
     });
 
- 
 });

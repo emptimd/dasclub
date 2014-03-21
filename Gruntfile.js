@@ -137,6 +137,7 @@ module.exports = function (grunt) {
         concat: {
             js: {
                 src: [
+                'js/jquery.bxslider.min.js',
                 'js/_functions.js',
                 'js/main.js'
                 ],
