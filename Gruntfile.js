@@ -224,7 +224,7 @@ module.exports = function (grunt) {
 
         sprite:{
             all: {
-                src: 'img/sprites/sprite_footer*.png',
+                src: 'img/sprites/sprite_footer/*.png',
                 destImg: 'img/sprite_footer.png',
                 destCSS: 'less/sprites/sprite_footer.less',
                 engine: 'pngsmith'
