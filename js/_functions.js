@@ -1,22 +1,5 @@
 /*=====UNCOMMENT ANY OF THIS FUNCTIONS TO USE THEM INTO MAIN.JS====*/
 
-	//Align element in the middle of the screen
-$.fn.alignCenter = function() {
-	 var marginTop = Math.max(40, parseInt($(window).height()/2 - $(this).height()/2)) + 'px';
-	 var marginLeft = Math.max(40, parseInt($(window).width()/2 - $(this).width()/2)) + 'px';
-	 //return updated element
-	 return $(this).css({'marign-top':marginTop,'margin-left':marginLeft});
-	};
-
-	//Align element in the middle of the parent
-$.fn.alignParentCenter = function() {
-	var $this = $(this);
-	var marginTop = parseInt($this.parent().height()/2 - $this.height()/2) + 'px';
-	var marginLeft = parseInt($this.parent().width()/2 - $this.width()/2) + 'px';
-	//return updated element
-	return $this.css({'margin-top':marginTop,'margin-left':marginLeft});
-};
-
 /**
  * Get background color of elemet.
  */
@@ -55,14 +38,6 @@ $.fn.alignParentCenter = function() {
 // });
 
 /**
- * Automaticaly add * for label that contains *:required. 
- */
-// function label_required() {
-//  $('*:required').parent('label').append('*');
-// }
-
-
-/**
  * Fade button + scroll to top on click.
  */
 // function window_scrool() {
@@ -78,24 +53,26 @@ $.fn.alignParentCenter = function() {
 //  });
 // }
 
-
 /**
  * Google map
+ * @param {number} lat
+ * @param {number} lang
+ * @param {number} zoom
  */
-// function googlemap(lat,lang,zoom) {
-// 	if (typeof lat === 'undefined') lat=10;
-// 	if (typeof lang === 'undefined') lang=10;
-// 	if (typeof zoom === 'undefined') zoom=2;
-// 	var mapCanvas = document.getElementById('map');
-// 	 var latlng = new google.maps.LatLng(lat, lang);
-// 	 var settings = {
-// 	 zoom: zoom,
-// 	 center: latlng,
-// 	 mapTypeControl: true,
-// 	 mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
-// 	 navigationControl: true,
-// 	 navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-// 	 mapTypeId: google.maps.MapTypeId.ROADMAP
-// 	 };
-// 	 var map = new google.maps.Map(mapCanvas, settings);
-// }
+function googlemap(lat,lang,zoom) {
+	if (typeof lat === 'undefined') lat=10;
+	if (typeof lang === 'undefined') lang=10;
+	if (typeof zoom === 'undefined') zoom=2;
+	var mapCanvas = document.getElementById('map');
+	 var latlng = new google.maps.LatLng(lat, lang);
+	 var settings = {
+	 zoom: zoom,
+	 center: latlng,
+	 mapTypeControl: true,
+	 mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+	 navigationControl: true,
+	 navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+	 mapTypeId: google.maps.MapTypeId.ROADMAP
+	 };
+	 var map = new google.maps.Map(mapCanvas, settings);
+}
