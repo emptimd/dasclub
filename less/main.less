@@ -1,7 +1,8 @@
 // @import  (inline) "/bower_components/normalize-css/normalize.css";
 // @import "_normalizeplus";
+@import (reference) "_classes";
 @import "_mixins";
-@import (reference) "_classes"; 
+ 
 
 /*-------------------------------------------------*/
 /* =  Reset
@@ -842,44 +843,109 @@ footer h5{
 .margin-left20 {margin-left: 20px;}
 
 
+/*-------------------------------------------------*/
+/* =  People
+/*-------------------------------------------------*/
+
+.people-top {
+	margin-top: -20px;
+	float: left;
+	clear: both;
+	width: 100%;
+	margin-bottom: 7px;
+	font-size: 14px;
+	h1{
+		margin-left: 10px;
+		text-transform: uppercase;
+		font-weight: bold;
+		display: inline-block;
+	}
+	label {
+		margin-left: 68px;
+		margin-right: 10px;
+
+	}
+	select {
+		height: 25px;
+		width: 143px;
+		padding-left: 13px;
+		background-color: transparent;
+		margin-right: 55px;
+	}
+}
+.paginator {
+	float: right;
+	margin-right: 15px;
+	margin-top: 7px;
+	font-size: 14px;
+}
+.main.people,.main.projects {
+	padding-left: 10px;
+}
+.item {
+	width: 241px;
+	height: 241px;
+	display: inline-block;
+	margin-right: 2px;
+	margin-bottom: 4px;
+	position: relative;
+	&:hover {
+		.item_info {
+			display: block;
+		}
+	}
+}
+
+.item_info {
+	width: 241px;
+	height: 241px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: .4;
+	display: none;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	.valign(241px);
+}
+
+.info_container {
+	.valigne
+}
+.item_name{
+	text-transform: uppercase;
+	margin-bottom: 27px;
+	width: 170px;
+}
+
+
+/*-------------------------------------------------*/
+/* =  END People
+/*-------------------------------------------------*/
+
+
+/*-------------------------------------------------*/
+/* =  $Projects
+/*-------------------------------------------------*/
+
+.project_name {
+	margin-bottom: 23px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.project_author {
+	font-size: 12px;
+}
+
+/*-------------------------------------------------*/
+/* =  END $Projects
+/*-------------------------------------------------*/
 
 
 
-/*-------------------------------------------------*/
-/* =  Header
-/*-------------------------------------------------*/
-
-
-/*-------------------------------------------------*/
-/* =  END Header
-/*-------------------------------------------------*/
-
-/*-------------------------------------------------*/
-/* =  Sidebar
-/*-------------------------------------------------*/
-
-
-/*-------------------------------------------------*/
-/* =  END Sidebar
-/*-------------------------------------------------*/
-
-/*-------------------------------------------------*/
-/* =  Content
-/*-------------------------------------------------*/
-
-
-/*-------------------------------------------------*/
-/* =  END Content
-/*-------------------------------------------------*/
-
-/*-------------------------------------------------*/
-/* =  Footer
-/*-------------------------------------------------*/
-
-
-/*-------------------------------------------------*/
-/* =  END Footer
-/*-------------------------------------------------*/
 
 /* Back to top */ 
 
