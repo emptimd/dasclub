@@ -1,0 +1,66 @@
+  @left_hover-x: 0px;
+  @left_hover-y: 18px;
+  @left_hover-offset-x: 0px;
+  @left_hover-offset-y: -18px;
+  @left_hover-width: 17px;
+  @left_hover-height: 11px;
+  @left_hover-total-width: 17px;
+  @left_hover-total-height: 40px;
+  @left_hover-image: '../../img/page_navigation.png';
+  @left_hover: 0px 18px 0px -18px 17px 11px 17px 40px '../../img/page_navigation.png';
+  @left_normal-x: 0px;
+  @left_normal-y: 0px;
+  @left_normal-offset-x: 0px;
+  @left_normal-offset-y: 0px;
+  @left_normal-width: 15px;
+  @left_normal-height: 9px;
+  @left_normal-total-width: 17px;
+  @left_normal-total-height: 40px;
+  @left_normal-image: '../../img/page_navigation.png';
+  @left_normal: 0px 0px 0px 0px 15px 9px 17px 40px '../../img/page_navigation.png';
+  @right_hover-x: 0px;
+  @right_hover-y: 29px;
+  @right_hover-offset-x: 0px;
+  @right_hover-offset-y: -29px;
+  @right_hover-width: 17px;
+  @right_hover-height: 11px;
+  @right_hover-total-width: 17px;
+  @right_hover-total-height: 40px;
+  @right_hover-image: '../../img/page_navigation.png';
+  @right_hover: 0px 29px 0px -29px 17px 11px 17px 40px '../../img/page_navigation.png';
+  @right_normal-x: 0px;
+  @right_normal-y: 9px;
+  @right_normal-offset-x: 0px;
+  @right_normal-offset-y: -9px;
+  @right_normal-width: 15px;
+  @right_normal-height: 9px;
+  @right_normal-total-width: 17px;
+  @right_normal-total-height: 40px;
+  @right_normal-image: '../../img/page_navigation.png';
+  @right_normal: 0px 9px 0px -9px 15px 9px 17px 40px '../../img/page_navigation.png';
+
+  .sprite-width(@sprite) {
+    width: ~`"@{sprite}".split(', ')[4]`;
+  }
+
+  .sprite-height(@sprite) {
+    height: ~`"@{sprite}".split(', ')[5]`;
+  }
+
+  .sprite-position(@sprite) {
+    @sprite-offset-x: ~`"@{sprite}".split(', ')[2]`;
+    @sprite-offset-y: ~`"@{sprite}".split(', ')[3]`;
+    background-position: @sprite-offset-x  @sprite-offset-y;
+  }
+
+  .sprite-image(@sprite) {
+    @sprite-image: ~`"@{sprite}".split(', ')[8].slice(1, -2)`;
+    background-image: url(@sprite-image);
+  }
+
+  .sprite(@sprite) {
+    .sprite-image(@sprite);
+    .sprite-position(@sprite);
+    .sprite-width(@sprite);
+    .sprite-height(@sprite);
+  }

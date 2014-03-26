@@ -21,7 +21,8 @@
     "grunt-webshot": "latest",
     "grunt-image-resize": "latest",
     "grunt-browser-sync": "latest",
-    "grunt-contrib-copy": "latest"
+    "grunt-contrib-copy": "latest",
+    "grunt-spritesmith": "~1.22.0"
   },
   "dependencies": {
     "time-grunt": "latest"

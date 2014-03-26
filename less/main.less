@@ -2,7 +2,8 @@
 // @import "_normalizeplus";
 @import (reference) "_classes";
 @import "_mixins";
- 
+@import "sprites/sprite_people_nav";
+@import "sprites/page_navigation";
 
 /*-------------------------------------------------*/
 /* =  Reset
@@ -56,6 +57,13 @@ body{
     margin:0 auto;
     width:1000px;
 }
+
+.padding {
+    padding: 0 15px;
+    .clearfix();
+}
+
+
 
 .left{float:left;}
 .right{float: right}
@@ -186,7 +194,7 @@ body{
 
 #tfnewsearch{
     float:left;
-    padding:20px;
+    padding-top:20px;
     margin-left: 394px;
 }
 .tftextinput{
@@ -194,6 +202,7 @@ body{
     padding: 6px 13px;
     border:1px solid #9f9f9f; border-right:0px;
     width: 262px;
+    height: 16px;
 }
 .tfbutton {
     margin: 0;
@@ -231,7 +240,11 @@ nav{
 }
 
 nav ul{
-
+    .clearfix();
+    padding: 0;
+    margin: 0;
+    line-height: 68px;
+    left: 68px;
 }
 
 nav ul li{
@@ -243,10 +256,12 @@ nav ul li{
 
 nav ul li a{
     text-decoration: none;
+    text-align: center;
     color: #323232;
-    line-height: 68px;
+    // line-height: 68px;
     padding : 0 20px 0 20px;
     display: block;
+    // width: 120px;
 }
 
 nav ul li .selected{
@@ -855,7 +870,7 @@ footer h5{
 	margin-bottom: 7px;
 	font-size: 14px;
 	h1{
-		margin-left: 10px;
+		// margin-left: 10px;
 		text-transform: uppercase;
 		font-weight: bold;
 		display: inline-block;
@@ -875,26 +890,47 @@ footer h5{
 }
 .paginator {
 	float: right;
-	margin-right: 15px;
+	// margin-right: 15px;
 	margin-top: 7px;
 	font-size: 14px;
 }
+.paginator_left {
+    display: inline-block;
+    .sprite(@left_normal);
+    &:hover {
+        .sprite(@left_hover);
+    }
+}
+.paginator_right {
+    display: inline-block;
+    .sprite(@right_normal);
+    &:hover {
+        .sprite(@right_hover);
+    }
+}
 .main.people,.main.projects {
-	padding-left: 10px;
+	padding-left: 15px;
+    margin-top: 0;
 }
 .item {
 	width: 241px;
 	height: 241px;
-	display: inline-block;
+	// display: inline-block; 
 	margin-right: 2px;
-	margin-bottom: 4px;
+	margin-bottom: 2px;
 	position: relative;
+    float: left;
 	&:hover {
 		.item_info {
 			display: block;
 		}
 	}
 }
+
+.item:nth-of-type(4n+4) {
+    margin-right: 0;
+}
+
 
 .item_info {
 	width: 241px;
@@ -942,6 +978,144 @@ footer h5{
 
 /*-------------------------------------------------*/
 /* =  END $Projects
+/*-------------------------------------------------*/
+
+
+/*-------------------------------------------------*/
+/* =  $People-single
+/*-------------------------------------------------*/
+
+.people-single-top {
+    margin-top: -23px;//-68(in fact -50)+27
+    margin-bottom: 26px;//258-232
+    .clearfix();
+    h1 {
+        padding-top: 11px;
+        font-weight: bold;
+        font-size: 23px;
+        float: left;
+    }
+}
+
+.navigation_peoples {
+    float: right;
+}
+
+.people-single-content {
+    .clearfix();
+}
+
+.first {
+    display: inline-block;
+    .sprite(@fisrt_normal);
+    &:hover {
+        .sprite(@first_hover);
+    }
+}
+
+.second {
+    display: inline-block;
+    .sprite(@second_normal);
+    &:hover {
+        .sprite(@second_hover);
+    }
+}
+
+.third {
+    display: inline-block;
+    .sprite(@third_normal);
+    &:hover {
+        .sprite(@third_hover);
+    }
+}
+
+.left_content {
+    float: left;
+    margin-right: 60px;
+    width: 513px;
+    .clearfix();
+    > img {
+        margin-bottom: 23px;
+        display: block;
+    }
+    h3 {
+        margin-top: 11px;//14
+        text-transform: uppercase;
+        margin-bottom: 11px;//14
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.tsocial {
+    display: inline-block;
+    margin-right: 11px;//actually 14
+    .sprite(@first_twitter);
+    &:hover {
+        .sprite(@second_twitter);
+    }
+}
+
+.fsocial {
+    display: inline-block;
+    .sprite(@first_facebook);
+    &:hover {
+        .sprite(@second_facebook);
+    }
+}
+
+.people_info {
+    font-size: 14px;
+    line-height: 20px;
+    display: block;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.right_content {
+    .clearfix();
+    width: 395px;
+    float: right;
+    font-size: 12px;
+    line-height: 14px;
+    h2 {
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+    h3 {
+        font-size: 16px;
+        margin-top: 24px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 27px;
+    }
+}
+
+.people-single-arrows {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    a {
+        display: inline-block;
+    }
+    a:first-of-type {
+        .sprite(@arrow_lef_normal);
+        &:hover {
+            .sprite(@arrow_left_hover);
+        }
+    }
+    a:last-of-type {
+        .sprite(@arrow_right_normal);
+        &:hover {
+            .sprite(@arrow_right_hover);
+        }
+    }
+}
+
+/*-------------------------------------------------*/
+/* =  END $People-single
 /*-------------------------------------------------*/
 
 
