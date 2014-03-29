@@ -3,14 +3,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="css/main.css"> 
+    <!-- Demo CSS --> 
+        <!-- <link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" /> -->
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+        <link href="/css/colorbox.css" rel="stylesheet" media="screen">
     <title>DAS Club</title>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- FlexSlider -->
+    <script src="/js/jquery.flexslider-min.js"></script>
+    <script src="/js/jquery.colorbox.js"></script>
 
 </head>
-<body>
+<body class="loading">
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -78,7 +84,91 @@
         </div><!-- / div.people-single-top -->
     <div class="people-single-content">
         <div class="left_content">
-            <img src="http://placehold.it/513x319" width="513" height="319">
+            <section class="slider-detail">
+                <div id="pic-detail" class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <a class="detailbox" href="http://placehold.it/485x280">
+                                <img src="http://placehold.it/485x280" width="485" height="280">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="detailbox" href="http://placehold.it/485x280">
+                                <img src="http://placehold.it/485x280" width="485" height="280">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="detailbox" href="http://placehold.it/485x280">
+                                <img src="http://placehold.it/485x280" width="485" height="280">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="detailbox" href="images/people-single.jpg">
+                                <img src="images/people-single.jpg" width="485" height="280">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="pic-control" class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="http://placehold.it/120x120" width="120" height="120">
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/120x120" width="120" height="120">
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/120x120" width="120" height="120">
+                        </li>
+                        <li>
+                            <img src="images/people-single.jpg" width="120" height="120">
+                        </li>
+                        <li>
+                            <img src="images/people-single.jpg" width="120" height="120">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Place somewhere in the <body> of your page -->
+<!--             <div id="slider" class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+              </ul>
+            </div>
+            <div id="carousel" class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+                <li>
+                  <img src="http://placehold.it/300x200">
+                </li>
+              </ul>
+            </div> -->
+
+
             <a href="#" class="tsocial"></a><!-- / span.tsocial -->
             <a href="#" class="fsocial"></a>
             <h3>Contact:</h3>
@@ -323,5 +413,30 @@
 </footer>
 <!-- ================ Main scripts scripts ============ -->
 <script src="js/common.js"></script>
+<script>
+    $('#pic-control').flexslider({
+        animation: "slide",
+        controlNav: false,
+
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 120,
+        itemMargin: 1,
+        maxItems: 4,
+        asNavFor: '#pic-detail'
+    });
+
+    $('#pic-detail').flexslider({
+        controlNav: false,
+        directionNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#pic-control",
+        start: function(slider){
+            $('body').removeClass('loading');
+        }
+    });
+    $(".detailbox").colorbox({rel:'detailbox'});
+</script>
 </body>
 </html>

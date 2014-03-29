@@ -1119,6 +1119,118 @@ footer h5{
 /*-------------------------------------------------*/
 
 
+/*-------------------------------------------------*/
+/* =  $Jcarusel
+/*-------------------------------------------------*/
+
+.jcarousel-wrapper {
+    position: relative;
+    h1 {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 17px;
+    }
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 850px;
+    height: 210px;
+    margin: 0 auto;
+}
+
+.jcarousel ul, .jcarousel_keys ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    float: left;
+    width: 211px;//or 211
+    height: 210px;
+    margin-right: 2px;
+}
+
+// .jcarousel_keys li {
+//     width: 920px;
+//     float: left;
+//     text-align: center;
+//     /*height: 400px;*/
+// }
+
+.jcarousel_keys table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 70px;
+    transition: all .3s;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+    .sprite(@related_left_normal);
+    &:not(.inactive):hover {
+        .sprite(@related_left_hover);
+    }
+}
+.jcarousel-control-next {
+    right: 15px;
+    .sprite(@related_right_normal);
+    &:not(.inactive):hover {
+        .sprite(@related_right_hover);
+    }
+}
+
+.inactive {
+    opacity: .8;
+}
+
+/*-------------------------------------------------*/
+/* =  END $Jcarusel
+/*-------------------------------------------------*/
+
+
+/*-------------------------------------------------*/
+/* =  $Flexslider
+/*-------------------------------------------------*/
+
+.flex-direction-nav .flex-disabled{opacity:.3!important;filter:alpha(opacity=30);cursor:default;}
+#pic-control .flex-direction-nav{*height:0;}
+#pic-control .flex-direction-nav a{width:29px;height:55px;/*margin:-27px 5% 0 3%;*/display:block;background:url('../img/icon/pre-dt.jpg') no-repeat 0 0;position:absolute;top:50%;z-index:10;cursor:pointer;text-indent:-9999px;opacity:0;-webkit-transition:all .3s ease;}
+#pic-control .flex-direction-nav .flex-next{background:url('../img/icon/next-dt.jpg') no-repeat 0 0;background-position:100% 0;/*right:7%;*/}
+#pic-control .flex-direction-nav .flex-next:hover{background:url('../img/icon/next-dt-hv.png') no-repeat 0 0;}
+#pic-control .flex-direction-nav .flex-prev:hover{background:url('../img/icon/pre-dt-hv.jpg') no-repeat 0 0;}
+// #pic-control .flex-direction-nav .flex-prev{left:0px;}
+#pic-control .flexslider:hover .flex-next{opacity:0.8;right:0px;}
+#pic-control .flexslider:hover .flex-prev{opacity:0.8;left:0px;}
+#pic-control .flexslider:hover .flex-next:hover{background:url('../img/icon/direction-nav.png') no-repeat 100% -54px;opacity:inherit;}
+#pic-control .flexslider:hover .flex-prev:hover{background:url('../img/icon/direction-nav.png') no-repeat 0 -54px;opacity:inherit;}
+#pic-control .flex-direction-nav .flex-disabled{opacity:.9!important;filter:alpha(opacity=30);cursor:default;opacity:inherit;}
+#pic-control.flexslider{background:none;border:none;box-shadow:none;margin-bottom:20px;margin:0 auto;/*padding:0 115px 0 60px;*/position:relative;}
+#pic-control.flexslider .flex-direction-nav a{opacity:inherit;}
+// #pic-control.flexslider img{height:55px;}
+#pic-control.flexslider .slides>li{margin-right:1px;}
+#pic-detail.flexslider{background:none;border:none;box-shadow:none;margin-bottom:2px;}
+
+/*-------------------------------------------------*/
+/* =  END $Flexslider
+/*-------------------------------------------------*/
+
+
+
+
 
 
 /* Back to top */ 

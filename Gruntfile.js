@@ -138,6 +138,8 @@ module.exports = function (grunt) {
             js: {
                 src: [
                 'js/jquery.bxslider.min.js',
+                'js/jquery.jcarousel.min.js',
+                'js/jcarousel.basic.js',
                 'js/_functions.js',
                 'js/main.js'
                 ],
